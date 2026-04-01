@@ -1,67 +1,111 @@
-# TenderGuard — AI-Powered Tender Compliance Validator
+# TenderGuard
 
-A full-stack Python/Flask web application that automates RFP compliance checking for procurement teams.
+## The Problem
 
-## Features
+Evaluating vendor proposals against a Request for Proposal (RFP) is a manual and time-intensive process. Teams must extract requirements, verify compliance, and identify risks across large documents, which increases the likelihood of oversight and inconsistent decision-making.
 
-### Feature 1: Requirement Extraction Engine
-- Detects mandatory keywords: "shall," "must," "required," "mandatory," etc.
-- Auto-categorises into: Technical Specifications, Legal Compliance, Financial Terms, Operational Requirements
-- Editable checklist — toggle individual requirements on/off before validating
+---
 
-### Feature 2: Bid-to-Requirement Mapping (The Validator)
-- Semantic matching with synonym expansion (e.g. "24/7 support" ↔ "round-the-clock helpdesk")
-- Confidence scoring (0–100%) per requirement
-- Status labels: Met / Partially Met / Missing
+## The Solution
 
-### Feature 3: Risk Detector
-- 15 built-in risk heuristics: "subject to change," "limited liability," "best efforts," etc.
-- Severity ratings: High / Medium / Low
-- Vagueness index based on hedging language
-- Impact explanation for each flagged clause
+TenderGuard is an AI-powered tender evaluation system that automates requirement extraction, validates vendor proposals against those requirements, and highlights potential risks.
 
-### Feature 4: Compliance Dashboard
-- Side-by-side vendor comparison with score rings
-- Risk heatmap by category per vendor
-- Deep-dive modal: click any "Missing" requirement to see the closest matching passage
-- Export as PDF audit report or CSV spreadsheet
+The platform introduces a structured workflow that improves accuracy, reduces manual effort, and provides clear, explainable insights for decision-making.
 
-## Setup
+### Core Functionalities
+
+* **Requirement Extraction Engine**
+  Automatically identifies mandatory requirements from RFP documents using keyword and intent detection, and organizes them into structured categories.
+
+* **Bid-to-Requirement Mapping**
+  Compares vendor proposals with extracted requirements using semantic matching, marking each requirement as met, partially met, or missing, along with confidence scores.
+
+* **Risk Detection Module**
+  Detects potentially risky clauses and vague language in vendor submissions and provides contextual explanations of their impact.
+
+* **Compliance Dashboard**
+  Presents a consolidated view of multiple vendors with compliance scores, risk indicators, and comparison metrics.
+
+---
+
+## Tech Stack
+
+* **Programming Language:** Python
+* **Backend Framework:** Flask
+* **Frontend:** HTML, CSS, JavaScript
+* **NLP / AI:** Semantic similarity models, keyword-based heuristics
+* **Data Formats:** JSON, CSV
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+git clone https://github.com/your-username/tenderguard.git
+cd tenderguard
+```
 
-# Run the application
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the application
+
+```bash
 python app.py
 ```
 
-Then open http://localhost:5000 in your browser.
+### 4. Access the application
+
+Open your browser and go to:
+
+```
+http://localhost:5000
+```
+
+---
+
+## Project Structure (Overview)
+
+```
+tenderguard/
+│── app.py
+│── requirements.txt
+│── templates/
+│   └── index.html
+│── static/
+│── utils/
+```
+
+---
 
 ## Usage
 
-1. **Start New Review** → Upload your RFP (PDF or TXT)
-2. **Review Requirements** → Confirm/deselect the extracted checklist
-3. **Upload Vendor Proposals** → Add one or more vendor bids
-4. **Dashboard** → Compare compliance scores, explore risks, export reports
+1. Upload an RFP document
+2. Review and confirm extracted requirements
+3. Upload one or more vendor proposals
+4. Analyze compliance scores and risk indicators
+5. Explore detailed mappings for each requirement
 
-Or click **Load Demo Data** on the landing page for an instant preview with 2 sample vendors.
+---
 
-## File Structure
+## Notes
 
-```
-tender_validator/
-├── app.py              # Main Flask application + all AI logic
-├── requirements.txt
-├── templates/
-│   └── index.html      # Full single-page UI
-├── uploads/            # Uploaded documents (auto-created)
-└── reports/            # Generated PDF reports (auto-created)
-```
+* Designed as an end-to-end prototype for automated tender evaluation
+* Focuses on explainability and structured analysis
 
-## Technical Notes
+---
 
-- **No external AI API required** — matching uses synonym-boosted Jaccard similarity
-- **Semantic synonym groups** cover common RFP/procurement terminology
-- **PDF generation** via ReportLab with structured multi-page audit reports
-- All processing is in-memory per session (use a database for production)
+## Demo Video
+
+(Add link here)
+
+---
+
+## Live Deployment (Optional)
+
+(Add link here)

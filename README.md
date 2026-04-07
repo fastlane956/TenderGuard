@@ -75,15 +75,3 @@ The system follows a structured workflow:
 * Identification of missing or partially addressed requirements
 * Detection of risky or vague clauses in vendor submissions
 * Compliance scoring and vendor comparison dashboard
-
----
-
-## Demo Video
-
-(Provide a 2–3 minute video demonstrating the application, user flow, and key features)
-
----
-
-## Live Demo (Optional)
-
-(Add deployed application link if available)
